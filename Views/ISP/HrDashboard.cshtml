@@ -1,0 +1,177 @@
+﻿@model IEnumerable<InterviewSchedulingProject1.Models.getcondidatedetailselected>
+
+@{
+    ViewData["Title"] = "HrDashboard";
+}
+
+<h1>HR/Manager Dashboard</h1>
+<marquee>HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard - HR Dashboard</marquee>
+<br>
+<div class="right">
+     @using (Html.BeginForm("HrDashboard", "ISP", FormMethod.Get))  
+        {  
+            <b> Search here </b> 
+          
+            @Html.TextBox("search") <input type="submit" value=" Search" class="searchbtn"/>  
+        }
+        </div>
+        <br>
+<table class="table" border="4">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.firstname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phoneno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tenth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.twelth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.graduation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.postgraduation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.skills)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Experince)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company)
+            </th>
+            <th>
+                Edit Details
+            </th> <th>
+               Schedule Interview
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.firstname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phoneno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.twelth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.graduation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.postgraduation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.skills)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Experince)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company)
+            </td>
+      
+             <td>
+                 <a asp-action="HrEditCandidate" asp-controller="ISP" class="btn btn-primary" asp-route-id="@item.id">Edit</a>  </td>
+            <td>
+                 <a asp-action="SetInterviewTiming" asp-controller="ISP" class="btn btn-primary" asp-route-id="@item.id">Schedule</a> 
+            </td>
+        </tr>
+     
+}
+    </tbody>
+</table>
+<style>
+.btn-primary {
+    color: #fff;
+    background-color: GREEN;
+    border-color: GREEN;
+}
+</style>
+<style>
+.table {
+    border-top:solid;
+    background-color: #E0FFFF;
+    border-color: black;
+}
+</style>
+<style>
+.searchbtn{
+    color:white;
+    background-color:#DC143C;
+}
+</style>
+<body class="hold-transition hr-dashboard"> 
+    
+</body>
+<style>
+.hr-dashboard{
+    background-image:url("https://img.freepik.com/free-vector/white-abstract-wallpaper_23-2148830026.jpg?w=2000");
+    background-repeat:repeat;
+    background-size:cover; 
+}
+</style>
+<style>
+tbody tr:nth-child(odd) {
+  background-color: #BDEDFF;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #C3FDB8;
+}
+</style>
